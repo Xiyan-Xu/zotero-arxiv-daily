@@ -12,10 +12,12 @@ email:
 
 llm:
   api:
-    key: ${oc.env:OPENAI_API_KEY}
-    base_url: ${oc.env:OPENAI_API_BASE}
+    key: ${oc.env:OPENAI_API_KEY}          # 你可以继续用此变量，或改为 GEMINI_API_KEY
+    base_url: ${oc.env:OPENAI_API_BASE}    # 若使用 Gemini 直连，可改成对应 endpoint
   generation_kwargs:
-    model: gpt-4o-mini
+    model: gemini-1.1                       # 推荐：gemini-1.1，或 gemini-pro
+    temperature: 0.1
+    max_tokens: 512
 
 source:
   arxiv:
